@@ -35,7 +35,7 @@ namespace NateK.BCTransit
 
         public async Task<List<VehicleStatusesData>> GetVehicleStatuses(int patternId)
         {
-            var result = await _httpService.Get<List<VehicleStatusesData>>(VehicleStatusesApi + "?shouldLog=false&patternIds[]=" + HttpUtility.UrlEncode(patternId.ToString()));
+            var result = await _httpService.Get<List<VehicleStatusesData>>(VehicleStatusesApi + "?shouldLog=false&patternIds=" + HttpUtility.UrlEncode(patternId.ToString()));
             return result;
         }
 
